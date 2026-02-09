@@ -1,0 +1,15 @@
+.venv
+.git
+.worktrees
+.pytest_cache
+.ruff_cache
+.mypy_cache
+__pycache__
+tests
+docs
+tools
+*.md
+.buildkite
+.gitignore
+.dockerignore
+Makefile

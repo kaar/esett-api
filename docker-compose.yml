@@ -1,0 +1,22 @@
+services:
+  db:
+    image: timescale/timescaledb:latest-pg17
+    environment:
+      POSTGRES_USER: expektra
+      POSTGRES_PASSWORD: expektra
+      POSTGRES_DB: expektra
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U expektra"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      EXPEKTRA_DATABASE_URL: "postgresql+asyncpg://expektra:expektra@db:5432/expektra"
+    depends_on:
+      db:
+        condition: service_healthy
