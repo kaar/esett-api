@@ -4,8 +4,8 @@ from collections.abc import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 DATABASE_URL = os.environ.get(
-    "EXPEKTRA_DATABASE_URL",
-    "postgresql+asyncpg://expektra:expektra@localhost:5432/expektra",
+    "ESETT_DATABASE_URL",
+    "postgresql+asyncpg://esett:esett@localhost:5432/esett",
 )
 
 engine = create_async_engine(DATABASE_URL, echo=False)

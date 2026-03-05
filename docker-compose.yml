@@ -2,11 +2,11 @@ services:
   db:
     image: timescale/timescaledb:latest-pg17
     environment:
-      POSTGRES_USER: expektra
-      POSTGRES_PASSWORD: expektra
-      POSTGRES_DB: expektra
+      POSTGRES_USER: esett
+      POSTGRES_PASSWORD: esett
+      POSTGRES_DB: esett
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U expektra"]
+      test: ["CMD-SHELL", "pg_isready -U esett"]
       interval: 2s
       timeout: 5s
       retries: 10
@@ -16,7 +16,7 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
     environment:
-      EXPEKTRA_DATABASE_URL: "postgresql+asyncpg://expektra:expektra@db:5432/expektra"
+      ESETT_DATABASE_URL: "postgresql+asyncpg://esett:esett@db:5432/esett"
     depends_on:
       db:
         condition: service_healthy

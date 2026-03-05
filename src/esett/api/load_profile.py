@@ -5,10 +5,10 @@ from sqlalchemy import Table, func, select
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from expektra.db import get_session
-from expektra.models import LoadProfile
-from expektra.schemas import LoadProfileDataPoint, PaginatedResponse
-from expektra.sync.esett_client import MBA_EIC_CODES
+from esett.db import get_session
+from esett.models import LoadProfile
+from esett.schemas import LoadProfileDataPoint, PaginatedResponse
+from esett.sync.esett_client import MBA_EIC_CODES
 
 _load_profile_table: Table = LoadProfile.__table__  # type: ignore[assignment]
 

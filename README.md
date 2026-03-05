@@ -1,9 +1,9 @@
-# eSett API Proxy (Expektra)
+# eSett API
 
 Time series data platform for Nordic energy market data from eSett.
 API proxy that caches eSett Open Data responses in TimescaleDB.
 
-Hosted at [expektra.nettelbladt.dev](https://expektra.nettelbladt.dev)
+Hosted at [esett.nettelbladt.dev](https://esett.nettelbladt.dev)
 
 ## Run locally
 

@@ -8,13 +8,13 @@ from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import text
 
-from expektra.api.consumption import router as consumption_router
-from expektra.api.load_profile import router as load_profile_router
-from expektra.api.prices import router as prices_router
-from expektra.api.production import router as production_router
-from expektra.db import engine
-from expektra.models import Base
-from expektra.sync.esett_client import EsettClient
+from esett.api.consumption import router as consumption_router
+from esett.api.load_profile import router as load_profile_router
+from esett.api.prices import router as prices_router
+from esett.api.production import router as production_router
+from esett.db import engine
+from esett.models import Base
+from esett.sync.esett_client import EsettClient
 
 _HYPERTABLES = ["load_profile", "production", "consumption", "imbalance_price"]
 
@@ -38,9 +38,9 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
 
 
 app = FastAPI(
-    title="Expektra",
+    title="eSett API",
     description="API proxy for eSett Open Data. Caches responses in TimescaleDB.",
-    version=version("expektra"),
+    version=version("esett"),
     lifespan=lifespan,
 )
 

@@ -5,10 +5,10 @@ from sqlalchemy import Table, func, select
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from expektra.db import get_session
-from expektra.models import Consumption
-from expektra.schemas import ConsumptionDataPoint, PaginatedResponse
-from expektra.sync.esett_client import MBA_EIC_CODES
+from esett.db import get_session
+from esett.models import Consumption
+from esett.schemas import ConsumptionDataPoint, PaginatedResponse
+from esett.sync.esett_client import MBA_EIC_CODES
 
 _consumption_table: Table = Consumption.__table__  # type: ignore[assignment]
 

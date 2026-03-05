@@ -5,10 +5,10 @@ from sqlalchemy import Table, func, select
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from expektra.db import get_session
-from expektra.models import ImbalancePrice
-from expektra.schemas import ImbalancePriceDataPoint, PaginatedResponse
-from expektra.sync.esett_client import MBA_EIC_CODES
+from esett.db import get_session
+from esett.models import ImbalancePrice
+from esett.schemas import ImbalancePriceDataPoint, PaginatedResponse
+from esett.sync.esett_client import MBA_EIC_CODES
 
 _prices_table: Table = ImbalancePrice.__table__  # type: ignore[assignment]
 

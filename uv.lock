@@ -95,7 +95,7 @@ wheels = [
 ]
 
 [[package]]
-name = "expektra"
+name = "esett"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
